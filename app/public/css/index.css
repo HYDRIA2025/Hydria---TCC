@@ -82,6 +82,7 @@ nav a:hover{
     align-items: center;
     padding-right: 700px;
     height: 100vh;
+    margin-bottom: 50px;
 }
 
 .content{
@@ -92,6 +93,73 @@ nav a:hover{
     font-size: 6rem;
     color: #fff;
 
+}
+
+.box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box-01{
+    background-image: url(../images/home.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 230px;
+    width: 351rem;
+    margin: 1rem;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box-02{
+    background-image: url(../images/home.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 230px;
+    width: 351rem;
+    margin: 1rem;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box-03{
+    background-image: url(../images/home.jpg);
+    background-size: cover;
+    background-position: center;
+    height: 230px;
+    width: 351rem;
+    margin: 1rem;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+}
+
+.box-topics{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.topics img{
+    background-color: var(--bg);
+    padding: 20px 20px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50px;
 }
 
 .btn{
@@ -108,6 +176,27 @@ nav a:hover{
 
 .btn:hover {
     letter-spacing: 0.1rem;
+}
+
+.tittle{
+    text-align: center;
+    margin: 2rem 0;
+    font-size: 4rem;
+    color: var(--bg);
+}
+
+.topic-tittle{
+    font-size: 2rem;
+    color: var(--bg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content-not{
+    font-size: 3rem;
+    color: #fff;
+    padding-right: 2rem;
 }
 
 span{
