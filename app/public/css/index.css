@@ -102,7 +102,7 @@ nav a:hover{
     flex-wrap: wrap;
 }
 
-.box-01{
+.box{
     background-image: url(../images/home.jpg);
     background-size: cover;
     background-position: center;
@@ -170,12 +170,14 @@ nav a:hover{
     font-family: 1.7rem;
     cursor: pointer;
     margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
     border-radius: 5px;
 }
 
 .btn:hover {
-    letter-spacing: 0.1rem;
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .tittle{
