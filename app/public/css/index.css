@@ -1,5 +1,5 @@
 :root {
-    --main-color: #A9A9A9;
+    --main-color:  #0056b3;
     --black: #13131a;
     --bg: #0A2459;
     --border: 0.3rem solid #A9A9A9;
@@ -58,14 +58,16 @@ header.rolagem .btn{
 
 nav a{
     margin: 0 1rem;
+    background-size: 5rem;
     font-size: 1.8rem;
     color: #fff;
 
 }
 
 nav a:hover{
-    color: var(--main-color);
-    border-bottom: 0.1rem solid var(--main-color);
+    background-color: var(--main-color);
+    padding: 0.5rem 0.7rem;
+    border-radius: 5px;
     padding-bottom: 0.5;
     font-size: 2rem;
 }
@@ -102,49 +104,36 @@ nav a:hover{
     flex-wrap: wrap;
 }
 
-.box-01{
-    background-image: url(../images/home.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 230px;
-    width: 351rem;
-    margin: 1rem;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    cursor: pointer;
+.box{
+  position: relative;
+  height: 23rem;
+  width: 351rem;
+  margin: 1rem;
+  border-radius: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  cursor: pointer;
+  overflow: hidden;
 }
 
-.box-02{
-    background-image: url(../images/home.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 230px;
-    width: 351rem;
-    margin: 1rem;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    cursor: pointer;
+.box .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
 }
 
-.box-03{
-    background-image: url(../images/home.jpg);
-    background-size: cover;
-    background-position: center;
-    height: 230px;
-    width: 351rem;
-    margin: 1rem;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    cursor: pointer;
+.box .content-not,
+.box a {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 10px;
 }
 
 .box-topics{
@@ -170,17 +159,19 @@ nav a:hover{
     font-family: 1.7rem;
     cursor: pointer;
     margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
     border-radius: 5px;
 }
 
 .btn:hover {
-    letter-spacing: 0.1rem;
+    background-color: #0056b3;
+    transform: translateY(-2px);
 }
 
 .tittle{
     text-align: center;
-    margin: 2rem 0;
+    margin: 4rem 0;
     font-size: 4rem;
     color: var(--bg);
 }
@@ -209,23 +200,25 @@ span{
     height: 102px;
 }
 
-.footer{
+footer{
+    background-color: var(--bg);
+    padding: 1rem 0;
     text-align: center;
 }
 
-.footer .share{
+footer .share{
     padding: 1rem 0;
 }
 
-.footer .share img{
-    width: 30px;
-    height: 30px;
+footer .share img{
+    width: 50px;
+    height: 50px;
     margin: 0.3rem;
     cursor: pointer;
     border-radius: 50%;
     padding: 1rem;
 }
 
-.footer .share img:hover{
-    background-color: var(--main-color);
+footer .share img:hover{
+    background-color:  #0056b3;
 }
