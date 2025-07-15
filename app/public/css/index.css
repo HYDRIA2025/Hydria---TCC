@@ -1,8 +1,9 @@
 :root {
     --main-color:  #0056b3;
+    --gradient-color: #6bccf2;
     --black: #13131a;
     --bg: #0A2459;
-    --border: 0.3rem solid #A9A9A9;
+    --border: 0.2rem solid #A9A9A9;
     font-size: 10px;
 }
 
@@ -16,9 +17,6 @@
     font-family: "Roboto", sans-serif;
 }
 
-html{
-    height: 150vh;
-}
 section{
     padding: 2rem 1rem;
     margin: 0 auto;
@@ -97,6 +95,21 @@ nav a:hover{
 
 }
 
+.box-topics{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
+}
+
+.topics img{
+    background-color: var(--bg);
+    padding: 20px 20px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50px;
+}
+
 .box-container{
     display: flex;
     align-items: center;
@@ -105,8 +118,8 @@ nav a:hover{
 }
 
 .box{
-  position: relative;
-  height: 23rem;
+    position: relative;
+    height: 23rem;
   width: 351rem;
   margin: 1rem;
   border-radius: 20px;
@@ -136,19 +149,27 @@ nav a:hover{
   padding: 10px;
 }
 
-.box-topics{
+
+.ranking-container{
     display: flex;
     align-items: center;
-    justify-content: space-around;
-    margin-top: 50px;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to top, var(--gradient-color), #fff);
+    background-size: cover;
+    background-position: center;
+    
 }
 
-.topics img{
-    background-color: var(--bg);
-    padding: 20px 20px;
-    cursor: pointer;
-    display: inline-block;
-    border-radius: 50px;
+.ranking-container  img{
+    width: 130rem;
+    height: 50rem;
+}
+
+.ranking-container section{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 .btn{
@@ -169,6 +190,24 @@ nav a:hover{
     transform: translateY(-2px);
 }
 
+.btn-01{
+    background-color: var(--bg);
+    color: #fff;
+    font-size: 20px;
+    padding: 2rem 20rem;
+    font-family: 2.7rem;
+    cursor: pointer;
+    margin-top: 3rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.btn-01:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 .tittle{
     text-align: center;
     margin: 4rem 0;
@@ -182,6 +221,12 @@ nav a:hover{
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.content{
+    font-size: 3rem;
+    color: #0B5A8C;
+    padding-right: 2rem;
 }
 
 .content-not{
@@ -202,6 +247,8 @@ span{
 
 footer{
     background-color: var(--bg);
+    border-top: var(--border);
+    color: #fff;
     padding: 1rem 0;
     text-align: center;
 }
