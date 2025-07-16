@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="..\css\noticia.css" />
+    <title>Hydria</title>
+  </head>
+  <body>
+    <main>
+      <%-include("../partial/header")%>
+
+      <aside class="home-container">
+        <section>
+          <article class="content">
+            <h2>
+              Com calor de 42 graus, vai faltar água em 36 bairros da Zona
+              Norte, abastecidos pela Águas do Rio
+            </h2>
+          </article>
+        </section>
+      </aside>
+
+      <section class="box-noticie">
+        <article class="content-noticie">
+          <p class="content-not">
+            Com o calorão sem dar trégua e máxima de 42 graus prevista para esta
+            segunda-feira (17), segundo o Alerta Rio, a Águas do Rio informa que
+            37 bairros da Zona Norte do Rio ficarão sem fornecimento de água por
+            conta de um reparo emergencial realizado em uma adutora em Benfica,
+            na mesma região. Segundo a concessionária, equipes atuam para
+            concluir o reparo até o fim da noite.
+          </p>
+          <img src="../images/img-noticie02.png" alt="img-noticie02" />
+          <p class="content-not">
+            Em nota, a Águas do Rio esclareceu que o reparo não foi uma decisão
+            da concessionária, especialmente em um período de calor intenso, mas
+            sim uma "emergência". A empresa informou ainda que, após a conclusão
+            do serviço, o abastecimento será retomado de forma gradual, com
+            normalização prevista em até 72 horas. No entanto, áreas mais
+            elevadas e localizadas nas extremidades do sistema de distribuição
+            podem enfrentar um tempo maior para a regularização do fornecimento.
+            Quais bairros do Rio ficarão sem água?
+          </p>
+          <p class="content-not">
+            Os bairros que ficarão sem abastecimento de água na Zona Norte do
+            Rio são:
+          </p>
+          <p class="content-not">
+            1- Abolição <br />2- Água Santa <br />3- Benfica <br />4- Brás de
+            Pina <br />5- Cachambi <br />6- Cavalcante <br />7- Coelho Neto
+            <br />8- Colégio <br />9- Del Castilho <br />10- Encantado
+
+            <span id="more-content" style="display: none">
+              <br />11-Engenho Dentro <br />12- Engenho da Rainha <br />13-
+              Engenho Novo <br />14- Higienópolis <br />15- Inhaúma <br />16-
+              Irajá <br />17- Jacaré <br />18- Madureira <br />19- Maguinhos
+              <br />20- Méier <br />21- Olaria <br />22- Piedade <br />23- Penha
+              <br />24- Penha Circular <br />25- Pilares <br />26- Quintino
+              Bocaiúva <br />27- Riachuelo <br />28- Rocha <br />29- Sampaio
+              <br />30- São Francisco Xavier <br />31- Todos os Santos <br />32-
+              Tomás Coelho <br />33- Vaz Lobo <br />34- Vicente de Carvalho
+              <br />35- Vila Da Penha <br />36- Vista Alegre
+            </span>
+            <button class="ver-mais-btn" onclick="toggleMore()">Ver mais</button>
+          </p>
+
+          <h2 class="font-tittle">Fonte: Agência Brasil</h2>
+        </article>
+      </section>
+
+      <h2 class="tittle">Veja Mais:</h2>
+
+      <section class="box-container">
+        <article class="box">
+          <a href="noticia01">
+            <img
+              src="../images/img-noticie01.png"
+              alt="img-noticie01"
+              class="bg-img"
+            />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+        <article class="box">
+          <a href="#noticia-3">
+            <img src="../images/home.jpg" alt="" class="bg-img" />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+        <article class="box">
+          <a href="#noticia-3">
+            <img src="../images/home.jpg" alt="" class="bg-img" />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+      </section>
+
+      <%-include("../partial/footer")%>
+    </main>
+    <script src="../js/noticia.js"></script>
+  </body>
+</html>

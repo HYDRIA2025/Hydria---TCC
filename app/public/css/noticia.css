@@ -70,49 +70,41 @@ nav a:hover{
 }
 
 .home-container{
-    background-image: url(../images/home-image.jpg);
-    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--gradient-color), #fff);
     background-size: cover;
     background-position: center;
 }
 
-.home-container{
-    display: flex;
-    align-items: center;
-    padding-right: 700px;
-    height: 100vh;
-    margin-bottom: 50px;
-}
-
 .content{
-    padding-left: 4rem;
+    text-align: center;
 }
 
 .content h2{
-    font-size: 6rem;
-    color: #fff;
+    font-size: 8rem;
+    color: var(--bg);
 
 }
 
-.box-topics{
+.content-noticie img{
+    width: 100%;
+    height: 100%;
+   border-radius: 5px;
+   margin-bottom: 6rem ;
+}
+
+.ver-mais-btn{
     display: flex;
-    align-items: center;
-    justify-content: space-around;
-    margin-top: 50px;
-}
-
-.topics img{
-    background-color: var(--bg);
-    padding: 20px 20px;
+    font-size: 3rem;
+    color: var(--bg);
+    text-decoration: underline;
+    margin-top: 2rem;
     cursor: pointer;
-    display: inline-block;
-    border-radius: 50px;
 }
 
-.topics img:hover {
-    background-color: #0056b3;
-    transform: translateY(-4px);
-}
 
 .box-container{
     display: flex;
@@ -157,33 +149,6 @@ nav a:hover{
   padding: 10px;
 }
 
-
-.ranking-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(to top, var(--gradient-color), #fff);
-    background-size: cover;
-    background-position: center;
-    
-}
-
-.ranking-container  img{
-    width: 130rem;
-    height: 50rem;
-}
-
-.ranking-container img:hover {
-    transform: translateY(-4px);
-}
-
-.ranking-container section{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
 .btn{
     background-color: var(--bg);
     color: #fff;
@@ -222,10 +187,16 @@ nav a:hover{
 
 .tittle{
     text-align: center;
-    margin: 4rem 0;
     font-size: 4rem;
+    margin: 3rem 0;
     color: var(--bg);
 }
+
+.font-tittle{
+    font-size: 3rem;
+    color: var(--bg);
+}
+
 
 .topic-tittle{
     font-size: 2rem;
@@ -235,7 +206,7 @@ nav a:hover{
     align-items: center;
 }
 
-.content{
+.content-txt{
     font-size: 3rem;
     color: #0B5A8C;
     padding-right: 2rem;
@@ -243,8 +214,8 @@ nav a:hover{
 
 .content-not{
     font-size: 3rem;
-    color: #fff;
-    padding-right: 2rem;
+    color: var(--bg);
+    padding-bottom: 4rem;
 }
 
 span{
