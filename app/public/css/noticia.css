@@ -1,6 +1,6 @@
 :root {
     --main-color:  #0056b3;
-    --gradient-color: #6bccf2;
+    --gradient-color: #3772EF;
     --black: #13131a;
     --bg: #0A2459;
     --border: 0.2rem solid #A9A9A9;
@@ -93,7 +93,7 @@ nav a:hover{
     width: 100%;
     height: 100%;
    border-radius: 5px;
-   margin-bottom: 6rem ;
+   margin-bottom: 3rem ;
 }
 
 .ver-mais-btn{
@@ -110,7 +110,7 @@ nav a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-wrap: wrap;
+    flex-wrap: wrap; 
 }
 
 .box a{
@@ -191,12 +191,6 @@ nav a:hover{
     margin: 3rem 0;
     color: var(--bg);
 }
-
-.font-tittle{
-    font-size: 3rem;
-    color: var(--bg);
-}
-
 
 .topic-tittle{
     font-size: 2rem;

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="..\css\noticia.css" />
+    <title>Hydria</title>
+  </head>
+  <body>
+    <main>
+      <%-include("../partial/header")%>
+
+      <aside class="home-container">
+        <section>
+          <article class="content">
+            <h2>
+              Comunidade de Tapanã critica obras da COP30 e falta de saneamento
+              básico.
+            </h2>
+          </article>
+        </section>
+      </aside>
+
+      <section class="box-noticie">
+        <article class="content-noticie">
+          <p class="content-not">
+            Luciano Pereira, morador do bairro de Tapanã, em Belém, expressa o
+            descontentamento da população com as intervenções realizadas para a
+            COP30, que não resolvem os problemas estruturais da região. O
+            igarapé Mata Fome, que corta a localidade, está completamente
+            poluído, transformado em um canal de esgoto sem tratamento,
+            evidenciando a precariedade do saneamento na área. Embora o governo
+            estadual afirme que mais de 500 mil pessoas serão atendidas com as
+            melhorias, apenas 40 mil receberão coleta de esgoto - o equivalente
+            a meros 3% dos habitantes.
+          </p>
+          <img src="../images/img-noticie05.jpg" alt="img-noticie05" />
+          <p class="content-not">
+            Luana Pretto, à frente do Instituto Trata Brasil, explica que
+            saneamento básico vai além do fornecimento de água potável,
+            incluindo também tratamento de efluentes, gestão de resíduos e
+            controle de inundações. Apesar de o governo incluir projetos de
+            drenagem e urbanização em seus cálculos, analistas destacam que
+            essas medidas ainda estão longe de suprir as carências das zonas
+            mais vulneráveis.
+          </p>
+          <p class="content-not">
+            Adler Silveira, titular da Secretaria de Infraestrutura do Pará,
+            esclarece que os trabalhos serão executados progressivamente, com
+            foco inicial nas zonas de maior concentração demográfica. No
+            entanto, o cotidiano de habitantes como Nilza Nordeste de Souza
+            revela um cenário preocupante, marcado por enfermidades como
+            escabiose, decorrentes da ausência de condições higiênicas mínimas.
+            Especialistas apontam que as intervenções vinculadas à COP30
+            privilegiam localidades já beneficiadas com infraestrutura básica,
+            deixando de lado comunidades periféricas que continuam
+            desassistidas. Tereza Campello, à frente do BNDES, enfatiza a
+            relevância dos aportes em sistemas de macrodrenagem para mitigar
+            inundações e proteger os cidadãos. Se por um lado vizinhos da
+            Avenida Cipriano Santos comemoram os avanços, por outro, a
+            morosidade em outras frentes de trabalho causa apreensão.
+            Localidades como Benguí e Marambaia enfrentam impasses que não só
+            atrasam as intervenções como também agravam o dia a dia da
+            população.
+          </p>
+        </article>
+        <h2 class="content-not"><b>Fonte:</b> JovemPan</h2>
+      </section>
+
+      <h2 class="tittle">Veja Mais:</h2>
+
+      <section class="box-container">
+        <article class="box">
+          <a href="noticia01">
+            <img
+              src="../images/img-noticie01.png"
+              alt="img-noticie01"
+              class="bg-img"
+            />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+        <article class="box">
+          <a href="#noticia-3">
+            <img src="../images/home.jpg" alt="" class="bg-img" />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+        <article class="box">
+          <a href="#noticia-3">
+            <img src="../images/home.jpg" alt="" class="bg-img" />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+      </section>
+
+      <%-include("../partial/footer")%>
+    </main>
+    <script src="../js/noticia.js"></script>
+  </body>
+</html>

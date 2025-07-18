@@ -17,4 +17,20 @@ router.get('/noticia02', function(req, res) {
     res.render('pages/noticia02')
 })
 
+router.get('/noticia03', function(req, res) {
+    res.render('pages/noticia03')
+})
+
+router.get('/noticia04', function(req, res) {
+    res.render('pages/noticia04')
+})
+
+router.get('/noticia05', function(req, res) {
+    res.render('pages/noticia05')
+})
+
+router.get('/noticia06', function(req, res) {
+    res.render('pages/noticia06')
+})
+
 module.exports = router;

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="..\css\noticia.css" />
+    <title>Hydria</title>
+  </head>
+  <body>
+    <main>
+      <%-include("../partial/header")%>
+
+      <aside class="home-container">
+        <section>
+          <article class="content">
+            <h2>Aprovado pela Sanepar R$420,4 mil em JCP</h2>
+          </article>
+        </section>
+      </aside>
+
+      <section class="box-noticie">
+        <article class="content-noticie">
+          <p class="content-not">
+            <b
+              >Pagamento será calculado com base no desempenho da empresa no
+              primeiro semestre de 2025.</b
+            >
+          </p>
+          <img src="../images/img-noticie06.jpg" alt="img-noticie06" />
+          <p class="content-not">
+            A Sanepar, empresa de saneamento do Paraná, divulgou na quarta-feira
+            (18) que seu conselho de administração autorizou a distribuição de
+            R$ 420,4 milhões em juros sobre capital próprio, conforme informado
+            em comunicado oficial.
+          </p>
+          <p class="content-not">
+            O valor será calculado com base no desempenho da companhia no
+            primeiro semestre deste ano.
+          </p>
+          <p class="content-not">
+            O montante corresponde a aproximadamente R$ 0,26 por ação ordinária
+            e R$ 0,29 por ação preferencial.
+          </p>
+          <p class="content-not">
+            A data para o pagamento será determinada em assembleia de
+            acionistas, que deve ocorrer até abril de 2026, segundo a empresa.
+          </p>
+        </article>
+        <h2 class="content-not"><b>Fonte:</b> Uol</h2>
+      </section>
+
+      <h2 class="tittle">Veja Mais:</h2>
+
+      <section class="box-container">
+        <article class="box">
+          <a href="noticia01">
+            <img
+              src="../images/img-noticie01.png"
+              alt="img-noticie01"
+              class="bg-img"
+            />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+        <article class="box">
+          <a href="#noticia-3">
+            <img src="../images/home.jpg" alt="" class="bg-img" />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+        <article class="box">
+          <a href="#noticia-3">
+            <img src="../images/home.jpg" alt="" class="bg-img" />
+            <h3 class="content-not">
+              Encontro em SP discute políticas <br />
+              urbanas para o manejo das águas.
+            </h3>
+          </a>
+        </article>
+      </section>
+
+      <%-include("../partial/footer")%>
+    </main>
+    <script src="../js/noticia.js"></script>
+  </body>
+</html>
