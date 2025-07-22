@@ -45,4 +45,28 @@ router.get('/noticia06', function(req, res) {
     res.render('pages/noticia06')
 })
 
+router.get('/ranking25', function(req, res) {
+    res.render('pages/ranking25')
+})
+
+router.get('/ranking24', function(req, res) {
+    res.render('pages/ranking24')
+})
+
+router.get('/ranking23', function(req, res) {
+    res.render('pages/ranking23')
+})
+
+router.get('/ranking22', function(req, res) {
+    res.render('pages/ranking22')
+})
+
+router.get('/ranking21', function(req, res) {
+    res.render('pages/ranking21')
+})
+
+router.get('/ranking20', function(req, res) {
+    res.render('pages/ranking20')
+})
+
 module.exports = router;

@@ -97,20 +97,14 @@ nav a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(to bottom, var(--gradient-color), #fff);
-    background-size: cover;
-    background-position: center;
+    margin-top: 5rem;
 }
 
 .box-provides{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(to top, var(--gradient-color), #fff);
-    background-size: cover;
-    background-position: center;
+    margin-bottom: 5rem;
 }
 
 .btn{
@@ -171,7 +165,7 @@ nav a:hover{
 }
 
 .content-not{
-    font-size: 3rem;
+    font-size: 2.5rem;
     color: var(--bg);
     padding-bottom: 4rem;
 }

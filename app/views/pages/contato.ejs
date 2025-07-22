@@ -18,10 +18,52 @@
   </head>
   <body>
     <main>
-        <%-include("../partial/header")%>
+      <%-include("../partial/header")%>
 
-        
-        <section></section>
+      <aside class="email-container">
+        <section>
+          <img src="../images/email-figure.png" alt="email-figure" />
+          <h2 class="tittle">CONTATE-NOS</h2>
+        </section>
+      </aside>
+
+      <section class="form-container">
+        <p class="content-not">Fique a vontade para nos enviar <br> uma mensagem!</p>
+        <form>
+          <label for="name">Nome:</label>
+          <input
+            placeholder="Digite seu nome"
+            type="text"
+            id="name"
+            name="name"
+            required
+          />
+          <label for="email">Email:</label>
+          <input
+            placeholder="Digite seu e-mail"
+            type="email"
+            id="email"
+            name="email"
+            required
+          />
+          <label for="telephone">Telefone:</label>
+          <input
+            placeholder="Digite seu telefone"
+            type="telephone"
+            id="telefone"
+            name="telephone"
+            required
+          />
+          <label for="message">Mensagem:</label>
+          <textarea
+            placeholder="Digite sua Mensagem"
+            id="message"
+            name="message"
+            required
+          ></textarea>
+          <button class="btn-01" type="submit">Enviar</button>
+        </form>
+      </section>
     </main>
   </body>
 </html>

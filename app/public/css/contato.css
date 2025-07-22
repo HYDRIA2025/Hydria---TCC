@@ -69,6 +69,58 @@ nav a:hover{
     font-size: 2rem;
 }
 
+.email-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--gradient-color), #fff);
+    background-size: cover;
+    background-position: center;
+}
+
+.email-container img{
+    width: 400px;
+    height: 400px;
+}
+
+.form-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-container form{
+    border-radius: 15px;
+    max-width: 40rem;
+}
+
+.form-container label{
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--bg);
+}
+
+form input{
+    width: 400px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+}
+
+form textarea{
+    width: 400px;
+    height: 200px;
+    padding: 2rem;
+    margin-bottom: 3rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1.6rem;
+}
+
 .btn{
     background-color: var(--bg);
     color: #fff;
@@ -91,10 +143,9 @@ nav a:hover{
     background-color: var(--bg);
     color: #fff;
     font-size: 20px;
-    padding: 2rem 20rem;
+    padding: 2rem 19.4rem;
     font-family: 2.7rem;
     cursor: pointer;
-    margin-top: 3rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
     border-radius: 5px;
@@ -107,8 +158,8 @@ nav a:hover{
 
 .tittle{
     text-align: center;
-    margin: 4rem 0;
-    font-size: 4rem;
+    margin-bottom: 5rem;
+    font-size: 6rem;
     color: var(--bg);
 }
 
@@ -127,9 +178,10 @@ nav a:hover{
 }
 
 .content-not{
-    font-size: 3rem;
-    color: #fff;
-    padding-right: 2rem;
+    font-size: 2.5rem;
+    color: var(--bg);
+    text-align: left;
+    padding-bottom: 4rem;
 }
 
 span{
