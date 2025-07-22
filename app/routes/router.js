@@ -5,6 +5,18 @@ router.get('/', function(req, res) {
     res.render('pages/index')
 })
 
+router.get('/sobre', function (req, res) {
+    res.render('pages/sobre')
+})
+
+router.get('/doacao', function (req, res) {
+    res.render('pages/doacao')
+})
+
+router.get('/contato', function (req, res) {
+    res.render('pages/contato')
+})
+
 router.get('/login', function(req, res) {
     res.render('pages/login')
 })
