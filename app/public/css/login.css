@@ -227,3 +227,12 @@ main a {
         padding: 30px;
     }
 }
+
+.erro-form{
+    background-color: red;
+}
+
+span{
+    color: red;
+}
+

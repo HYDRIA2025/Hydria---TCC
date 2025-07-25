@@ -7,8 +7,11 @@ app.use(express.static('app/public'));
 app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
-var rotas = require('./app/routes/router');
-app.use('/', rotas);
+app.use(express.json())
+app.use(express.urlencoded({extended:true}));
+
+const rotaPrincipal = require("./app/routes/router")
+app.use("/", rotaPrincipal)
 
 app.listen(port, () => {
     console.log(`Servidor online \nHttp://localhost:${port}`)

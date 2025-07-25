@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router(); 
+const {body, validationResult} = require("express-validator")
 
 router.get('/', function(req, res) {
     res.render('pages/index')
@@ -68,5 +69,36 @@ router.get('/ranking21', function(req, res) {
 router.get('/ranking20', function(req, res) {
     res.render('pages/ranking20')
 })
+
+
+
+//login
+router.get("/", (req, res) => {
+    res.render("pages/login", {listaErros: null, valores:{login_email:"", login_password:""}})
+})
+
+router.post("/login",
+    body("login_email").isEmail().withMessage("Email inválido"),
+    body("login_password").isLength({min:6}).withMessage("Senha inválida"),
+    
+    (req, res) => {
+        const listaErros = validationResult(req)
+
+        //receber dados do formulário
+        if(listaErros.isEmpty()){
+
+            res.render("pages/login", { 
+                    listaErros: null, 
+                    valores:req.body
+                })
+        }else{
+            res.render("pages/login", {
+                listaErros: listaErros, 
+                valores:req.body
+                })
+            console.log(listaErros)
+        }
+    }
+)
 
 module.exports = router;

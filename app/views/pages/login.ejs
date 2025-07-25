@@ -16,37 +16,70 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
   </head>
+  
   <body>
     <main>
-      <a href="/"><button class="btn-01"> <i class="fas fa-arrow-left"></i></button></a>
-      <section class="container">
-        <section class="form-card">
-          <section class="logo">LOGO</section>
-          <section class="tabs">
-            <button class="tab-button active" id="login-tab">LOGIN</button>
-            <button class="tab-button" id="signup-tab">CADASTRE-SE</button>
-          </section>
+      <a href="/"
+      ><button class="btn-01"><i class="fas fa-arrow-left"></i></button
+        ></a>
+        <section class="container">
+          <section class="form-card">
+            <section class="logo">LOGO</section>
+            <section class="tabs">
+              <button class="tab-button active" id="login-tab">LOGIN</button>
+              <button class="tab-button" id="signup-tab">CADASTRE-SE</button>
+            </section>
+            
+            <%
+                const msgErro = { login_email: "", login_password: "" };
+                const cssErro = { login_email: "", login_password: "" };
 
-          <form id="login-form" class="form-section active">
+
+              if (typeof listaErros !== 'undefined' && listaErros && listaErros.errors) {
+                
+                  listaErros.errors.forEach((erro) => {
+                    if (erro.path === "login_email") {
+                      msgErro.login_email = erro.msg;
+                      cssErro.login_email = "erro-form";
+                    } else if (erro.path === "login_password") {
+                      msgErro.login_password = erro.msg;
+                      cssErro.login_password = "erro-form";
+                    }
+                  });
+              }
+              
+            %>
+          <form
+            action="/login"
+            method="post"
+            id="login-form"
+            class="form-section active"
+          >
             <section class="input-group">
-              <label for="login-email">Email ou nome de usuário</label>
+              <label for="login_email">Email</label>
               <input
-                type="email"
+                type="text"
+                name="login_email"
                 id="login-email"
-                placeholder="Seu email ou usuário"
-                required
+                placeholder="Seu email"
+                class="<%= cssErro.login_email %>"
               />
+              <span><%= msgErro.login_email %></span>
             </section>
             <section class="input-group">
-              <label for="login-password">Senha</label>
+              <label for="login_password">Senha</label>
               <input
                 type="password"
+                name="login_password"
                 id="login-password"
                 placeholder="Sua senha"
-                required
+                class="<%= cssErro.login_password %>"
               />
+              <span><%= msgErro.login_password %></span>
             </section>
-            <button type="submit" class="btn primary-btn">ENTRAR</button>
+            <button type="submit" value="login" class="btn primary-btn">
+              ENTRAR
+            </button>
           </form>
 
           <form id="signup-form" class="form-section">
@@ -56,7 +89,6 @@
                 type="text"
                 id="signup-name"
                 placeholder="Seu nome completo"
-                required
               />
             </section>
             <section class="input-group">
@@ -65,7 +97,6 @@
                 type="email"
                 id="signup-email"
                 placeholder="Seu melhor email"
-                required
               />
             </section>
             <section class="input-group">
@@ -74,7 +105,6 @@
                 type="password"
                 id="signup-password"
                 placeholder="Crie sua senha"
-                required
               />
             </section>
             <button type="submit" class="btn primary-btn">CADASTRAR</button>
