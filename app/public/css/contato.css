@@ -23,88 +23,50 @@ section{
     max-width: 1200px;
 }
 
-header{
-    position: fixed;
-    padding: 20px 4%;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-}
-
-header section{
+main{
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-header.rolagem{
-    background-color: var(--bg);
-    padding: 5px 4%;
-}
-
-header.rolagem a{
-    color: #fff;
-}
-
-header.rolagem .btn{
-    background-color: #fff;
-    color: var(--bg);
-}
-
-nav a{
-    margin: 0 1rem;
-    background-size: 5rem;
-    font-size: 1.8rem;
-    color: #fff;
-
-}
-
-nav a:hover{
-    color: var(--main-color);
-    border-bottom: 0.2rem solid var(--main-color);
-    padding: 0.1rem 0.3rem;
-    font-size: 2rem;
-}
-
-.email-container{
-    display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
     min-height: 100vh;
-    background: linear-gradient(to bottom, var(--gradient-color), #fff);
+    background-image: url('../images/img-noticie06.jpg');
     background-size: cover;
     background-position: center;
 }
 
-.email-container img{
-    width: 400px;
-    height: 400px;
+main a {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+    font-size: 1.5rem;
+    text-decoration: none;
+
 }
 
 .form-container{
+    background-color: #fff;
+    width: 45rem;
+    border-radius: 10px;
+}
+
+.form-container form{
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
 
-.form-container form{
-    border-radius: 15px;
-    max-width: 40rem;
-}
-
 .form-container label{
-    font-size: 2rem;
-    font-weight: bold;
+    align-self: flex-start;
+    padding-left: 1.2rem;
+    margin-bottom: 8px;
+    font-size: 1.5rem;
     color: var(--bg);
 }
 
 form input{
     width: 400px;
-    padding: 2rem;
+    padding: 1.3rem;
     margin-bottom: 2rem;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -113,8 +75,8 @@ form input{
 
 form textarea{
     width: 400px;
-    height: 200px;
-    padding: 2rem;
+    height: 100px;
+    padding: 1.3rem;
     margin-bottom: 3rem;
     border-radius: 5px;
     border: 1px solid #ccc;
@@ -142,9 +104,8 @@ form textarea{
 .btn-01{
     background-color: var(--bg);
     color: #fff;
-    font-size: 20px;
-    padding: 2rem 19.4rem;
-    font-family: 2.7rem;
+    font-size: 1.6rem;
+    padding: 1.5rem 19.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
@@ -187,11 +148,6 @@ form textarea{
 span{
     color: var(--bg);
 
-}
-
-.logo{
-    width: 95px;
-    height: 102px;
 }
 
 footer{

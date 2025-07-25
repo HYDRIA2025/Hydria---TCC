@@ -23,8 +23,7 @@
       ><button class="btn-01"><i class="fas fa-arrow-left"></i></button
         ></a>
         <section class="container">
-          <section class="form-card">
-            <section class="logo">LOGO</section>
+          <section class="form-card"> 
             <section class="tabs">
               <button class="tab-button active" id="login-tab">LOGIN</button>
               <button class="tab-button" id="signup-tab">CADASTRE-SE</button>
@@ -44,11 +43,21 @@
                     } else if (erro.path === "login_password") {
                       msgErro.login_password = erro.msg;
                       cssErro.login_password = "erro-form";
+                    }else if (erro.path ==="signup_name") {
+                      msgErro.signup_name = erro.msg;
+                      cssErro.signup_name = "erro-form";
+                    }else if (erro.path ==="signup_email") {
+                      msgErro.signup_email = erro.msg;
+                      cssErro.signup_email = "erro-form";
+                    }else if (erro.path ==="signup_password") {
+                      msgErro.signup_password = erro.msg;
+                      cssErro.signup_password = "erro-form";
                     }
                   });
               }
               
             %>
+
           <form
             action="/login"
             method="post"
@@ -82,32 +91,41 @@
             </button>
           </form>
 
-          <form id="signup-form" class="form-section">
+          <form action="/signup" method="post" id="signup-form" class="form-section">
             <section class="input-group">
-              <label for="signup-name">Nome Completo</label>
+              <label for="signup_name">Nome Completo</label>
               <input
                 type="text"
+                name="signup_name"
                 id="signup-name"
                 placeholder="Seu nome completo"
+                class="<%= cssErro.signup_name %>"
               />
+              <span><%= msgErro.signup_name %></span>
             </section>
             <section class="input-group">
-              <label for="signup-email">Email</label>
+              <label for="signup_email">Email</label>
               <input
                 type="email"
+                name="signup_email"
                 id="signup-email"
                 placeholder="Seu melhor email"
+                class="<%= cssErro.signup_email %>"
               />
+              <span><%= msgErro.signup_email %></span>
             </section>
             <section class="input-group">
-              <label for="signup-password">Senha</label>
+              <label for="signup_password">Senha</label>
               <input
                 type="password"
+                name="signup_password"
                 id="signup-password"
                 placeholder="Crie sua senha"
+                class="<%= cssErro.signup_password %>"
               />
+              <span><%= msgErro.signup_password %></span>
             </section>
-            <button type="submit" class="btn primary-btn">CADASTRAR</button>
+            <button type="submit" value="signup" class="btn primary-btn">CADASTRAR</button>
           </form>
 
           <section class="social-login">

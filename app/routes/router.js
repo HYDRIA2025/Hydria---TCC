@@ -101,4 +101,33 @@ router.post("/login",
     }
 )
 
+
+//signup
+router.get("/signup", (req, res) => {
+    res.render("pages/login", {listaErros: null, valores:{signup_name:"", signup_email:"", signup_password:""}})
+})
+
+router.post("/signup",
+    body("signup_name").isLength({min:3}).withMessage("Nome inválido"),
+    body("signup_email").isEmail().withMessage("Email inválido"),
+    body("signup_password").isLength({min:6}).withMessage("Senha inválida"),
+    
+    (req, res) => {
+        const listaErros = validationResult(req)
+
+        if(listaErros.isEmpty()) {
+
+            res.render("pages/login", {
+                listaErros: null,
+                valores: req.body
+            })
+        }else{
+            res.render("pages/login", {
+                listaErros: listaErros,
+                valores:req.body
+            })
+            console.log(listaErros)
+        }
+    }
+)
 module.exports = router;
