@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router(); 
 const {body, validationResult} = require("express-validator")
-var {validarTelefone} = require("../helpers/telefone")
+var {validarTelefone} = require("../helpers/validacoes")
 
 router.get('/', function(req, res) {
     res.render('pages/index')
@@ -227,8 +227,8 @@ router.post('/msg',
             if(req.body.name, req.body.email, req.body.mensagem, req.body.telephone){
                 contato.push(req.body.name)
                 contato.push(req.body.email)
-                contato.push(req.body.message)
                 contato.push(req.body.telephone)
+                contato.push(req.body.message)
                 console.log('Nova Mensagem:', contato)
             }
 
