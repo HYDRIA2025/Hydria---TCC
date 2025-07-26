@@ -21,8 +21,36 @@
        <a href="/"
       ><button class="btn"><i class="fas fa-arrow-left"></i></button
         ></a>
+
+        <%
+          const msgErro = {name:'',email:'',telephone:'',message:''}
+          const cssErro = {name:'',email:'',telephone:'',message:''}
+         
+        if (typeof listaErros !== 'undefined' && listaErros && listaErros.errors) {
+          listaErros.errors.forEach(erro => {
+            if (erro.path === 'name') {
+              msgErro.name = erro.msg
+              cssErro.name = 'erro-form'
+
+            } else if (erro.path === 'email') {
+              msgErro.email = erro.msg
+              cssErro.email = 'erro-form'
+              
+            } else if (erro.path === 'telephone') {
+              msgErro.telephone = erro.msg
+              cssErro.telephone = 'erro-form'
+
+            } else if (erro.path === 'message') {
+              msgErro.message = erro.msg
+              cssErro.message = 'erro-form'
+            }
+          })
+        }
+
+        %>
+
       <section class="form-container">
-        <form>
+        <form action="/msg" method="post">
           <p class="content-not"><b>Envie uma mensagem!</b></p>
           <label for="name">Nome:</label>
           <input
@@ -30,31 +58,35 @@
             type="text"
             id="name"
             name="name"
-            required
+            class="<%= cssErro.name %>"
           />
+          <span><%= msgErro.name %></span>
           <label for="email">Email:</label>
           <input
             placeholder="Digite seu e-mail"
-            type="email"
+            type="text"
             id="email"
             name="email"
-            required
+            class="<%= cssErro.email %>"
           />
+          <span><%= msgErro.email %></span>
           <label for="telephone">Telefone:</label>
           <input
             placeholder="Digite seu telefone"
-            type="telephone"
+            type="number"
             id="telefone"
             name="telephone"
-            required
+            class="<%= cssErro.telephone %>"
           />
+          <span><%= msgErro.telephone %></span>
           <label for="message">Mensagem:</label>
           <textarea
             placeholder="Digite sua Mensagem"
             id="message"
             name="message"
-            required
+            class="<%= cssErro.message %>"
           ></textarea>
+          <span><%= msgErro.message %></span>
           <button class="btn-01" type="submit">Enviar</button>
         </form>
       </section>

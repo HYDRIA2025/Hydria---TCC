@@ -16,6 +16,12 @@
     transition: 0.2s linear;
 }
 
+section{
+    padding: 2rem 1rem;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
 main{
     display: flex;
     justify-content: center;
@@ -29,7 +35,6 @@ main a {
     top: 20px;
     left: 20px;
     color: var(--bg);
-
     font-size: 1.5rem;
     text-decoration: none;
 
@@ -44,13 +49,10 @@ main a {
 }
 
 .form-card {
-     background-color: #fff;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    padding: 5rem 5rem;
+    background-color: #fff;
     width: 45rem;
-    text-align: center;
-    box-sizing: border-box;
+    border-radius: 10px;
+    
 }
 
 .tabs {
@@ -65,7 +67,7 @@ main a {
 
 .tab-button {
     flex: 1;
-    padding: 12px 20px;
+    padding: 15px 20px;
     border: none;
     background-color: transparent;
     color: #fff;
@@ -97,21 +99,22 @@ main a {
 }
 
 .input-group {
-    text-align: left;
-    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .input-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-size: 1.5rem;
+    align-self: flex-start;
+    padding-left: 0.5rem;
+    font-size: 1.6rem;
     color: var(--bg);
 }
 
 .input-group input {
-    width: 320px;
+    width: 400px;
     padding: 1.3rem;
-    margin-bottom: 2rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1.6rem;
@@ -119,24 +122,27 @@ main a {
 
 
 .btn {
-    width: 100%;
-    padding: 15px;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.5rem;
-    font-weight: 600;
+    background-color: var(--bg);
+    color: #fff;
+    font-size: 1.6rem;
+    padding: 1.5rem 18.4rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 10px;
+    display: inline-block;
+    border-radius: 5px;
 }
+
+.btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 .btn-01{
     background-color: var(--bg);
     color: #fff;
     font-size: 15px;
     padding: 1rem 3rem;
-    font-family: 1.7rem;
     cursor: pointer;
-    margin-top: 1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
     border-radius: 5px;
@@ -147,19 +153,23 @@ main a {
     transform: translateY(-2px);
 }
 
-.primary-btn {
+.btn-02 {
     background-color: var(--bg);
     color: #fff;
-    box-shadow: 0 5px 15px rgba(0, 123, 255, 0.3);
+    font-size: 1.6rem;
+    padding: 1.5rem 16.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border-radius: 5px;
 }
 
-.primary-btn:hover {
+.btn-02:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
 
 .social-login {
-    margin-top: 30px;
     display: flex;
     flex-direction: column; 
     gap: 15px;
@@ -171,13 +181,13 @@ main a {
     justify-content: center;
     padding: 12px 20px;
     border-radius: 8px;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     cursor: pointer;
     transition: background-color 0.3s ease, border-color 0.3s ease;
     color: #555;
 }
 
-.social-btn i {
+/* .social-btn i {
     margin-right: 10px;
     font-size: 1.5rem;
 }
@@ -208,13 +218,12 @@ main a {
     .form-card {
         padding: 30px;
     }
-}
-
-.erro-form{
-    border: 1rem solid red;
-}
+} */
 
 span{
+    font-size: 1.3rem;
+    align-self: flex-start;
+    padding-left: 1.5rem;
     color: red;
 }
 

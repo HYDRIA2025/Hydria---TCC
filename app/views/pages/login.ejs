@@ -69,7 +69,7 @@
               <input
                 type="text"
                 name="login_email"
-                id="login-email"
+                id="loginEmail"
                 placeholder="Seu email"
                 class="<%= cssErro.login_email %>"
               />
@@ -80,15 +80,18 @@
               <input
                 type="password"
                 name="login_password"
-                id="login-password"
+                id="loginPassword"
                 placeholder="Sua senha"
                 class="<%= cssErro.login_password %>"
               />
               <span><%= msgErro.login_password %></span>
+              <input type="hidden" name="formLogin" id="formLogin" >
+              <br>
+              <br>
+              <button type="submit" value="login" class="btn">
+                ENTRAR
+              </button>
             </section>
-            <button type="submit" value="login" class="btn primary-btn">
-              ENTRAR
-            </button>
           </form>
 
           <form action="/signup" method="post" id="signup-form" class="form-section">
@@ -124,18 +127,21 @@
                 class="<%= cssErro.signup_password %>"
               />
               <span><%= msgErro.signup_password %></span>
+              <input type="hidden" name="formSignup" id="formSignup" >
+              <br>
+              <br>
+              <button type="submit" class="btn-02">CADASTRAR</button>
             </section>
-            <button type="submit" value="signup" class="btn primary-btn">CADASTRAR</button>
           </form>
 
-          <section class="social-login">
+          <!-- <section class="social-login">
             <button class="social-btn google">
               <i class="fab fa-google"></i> Google
             </button>
             <button class="social-btn facebook">
               <i class="fab fa-facebook-f"></i> Facebook
             </button>
-          </section>
+          </section> -->
         </section>
       </section>
     </main>

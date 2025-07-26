@@ -3,7 +3,7 @@
     --gradient-color: #3772EF;
     --black: #13131a;
     --bg: #0A2459;
-    --border: 0.2rem solid #A9A9A9;
+    --border: 1px solid #ccc;
     font-size: 10px;
 }
 
@@ -25,7 +25,7 @@ section{
 }
 
 main{
-    background-image: url(../images/home-image.jpg);
+    background-image: url(../images/img-noticie02.jpg);
     height: 100vh;
     background-size: cover;
     background-position: center;
@@ -38,51 +38,55 @@ main a{
     position: absolute;
     top: 20px;
     left: 20px;
-    color: #fff;
+    color: var(--bg);
     font-size: 1.5rem;
     text-decoration: none;
 
 }
 
 .selection{
-    display: flex;
-    flex-direction: column;
     padding: 3rem 3rem;
     border-radius: 10px;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #fff
+}
+
+.selection form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .input{
-    font-size: 2rem;
-    padding: 1rem 6.5rem;
-    border-radius: 16px;
-    background-color:#E8E8E880;
+    width: 400px;
+    padding: 1.3rem;
+    border-radius: 5px;
+    border: var(--border);
+    font-size: 1.6rem;
+    color: #000;
 }
 
-.input::placeholder{
-    color: #aaa;
-}
+
 
 .btn{
-    background-color: #E8E8E880;
+    background-color: var(--bg);
     color: #fff;
-    font-size: 15px;
-    padding: 2rem 15rem;
-    font-family: 1.7rem;
+    font-size: 1.6rem;
+    width: 428px;
+    padding: 1.6rem;
     cursor: pointer;
-    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
-    border-radius: 5px;
 }
 
 .btn:hover {
-    background-color: var(--bg);
+    background-color: #0056b3;
     transform: translateY(-2px);
 }
 
 .btn.ativo {
-    background-color: var(--bg);
+    background-color: #0056b3;
     transform: translateY(-2px);
 
 }
@@ -108,14 +112,14 @@ main a{
 .btn-02{
     background-color: var(--bg);
     color: #fff;
-    font-size: 15px;
-    padding: 1.5rem 14rem;
-    font-family: 1.7rem;
+    font-size: 1.6rem;
+    width: 428px;
+    padding: 1.6rem;
+    font-weight: 600;
     cursor: pointer;
-    margin-top: 1rem;
+    border-radius: 5px;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
-    border-radius: 15px;
 }
 
 .btn-02:hover {
@@ -139,9 +143,10 @@ main a{
 }
 
 .content{
-    font-size: 1.5rem;
-    color: #fff;
-    padding-right: 5rem;
+    align-self: start;
+    padding-left: 1rem;
+    font-size: 1.6rem;
+    color: var(--bg);
 }
 
 .content-not{
@@ -183,4 +188,16 @@ footer .share img{
 
 footer .share img:hover{
     background-color:  #0056b3;
+}
+
+.erro-form{
+    border: 1rem solid red;
+}
+
+span{
+    margin-top: 1rem;
+    align-self: flex-start;
+    padding-left: 1.5rem;
+    color: red;
+    font-size: 1.3rem;
 }
