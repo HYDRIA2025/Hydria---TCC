@@ -1,7 +1,8 @@
 var express = require('express');
 var router = express.Router(); 
 const {body, validationResult} = require("express-validator")
-var {validarTelefone} = require("../helpers/validacoes")
+var {validarTelefone} = require("../helpers/validacoes");
+const { render } = require('ejs');
 
 router.get('/', function(req, res) {
     res.render('pages/index')
@@ -71,6 +72,18 @@ router.get('/ranking20', function(req, res) {
     res.render('pages/ranking20')
 })
 
+router.get('/enviocont', function(req, res) {
+    res.render('pages/enviocont')
+})
+
+router.get('/enviodoa', function(req, res) {
+    res.render('pages/enviodoa')
+})
+
+router.get('/enviocad', function(req, res) {
+    res.render('pages/enviocad')
+})
+
 
 
 //login
@@ -89,10 +102,6 @@ router.post("/login",
         //receber dados do formulário
         if(listaErros.isEmpty()){
 
-            res.render("pages/login", { 
-                    listaErros: null, 
-                    valores:req.body
-                })
                 for(let i = login.length - 1; i >= 0 ; i--){
                     login.splice(i, 2)
                 }
@@ -101,6 +110,8 @@ router.post("/login",
                     login.push(req.body.login_password)
                     console.log('Novo Login:', login)
                 }
+                res.render('pages/enviologin')
+                
         }else{
             res.render("pages/login", {
                 listaErros: listaErros, 
@@ -129,11 +140,6 @@ router.post("/signup",
 
         if(listaErros.isEmpty()) {
 
-            res.render("pages/login", {
-                listaErros: null,
-                valores: req.body,
-            })
-
             for(let i = signup.length - 1; i >= 0 ; i--){
                 signup.splice(i, 3)
             }
@@ -143,6 +149,9 @@ router.post("/signup",
                 signup.push(req.body.signup_password)
                 console.log('Novo Cadastro:', signup)
             }
+
+            res.render('pages/enviocad')
+
         }else{
             res.render("pages/login", {
                 listaErros: listaErros,
@@ -168,10 +177,7 @@ router.post("/select",
         const listaErros = validationResult(req)
 
         if (listaErros.isEmpty()) {
-            res.render("pages/doacao", {
-                listaErros: null,
-                valores: req.body
-            })
+
                 for(let i = doacao.length - 1; i >=0 ; i--){   
                         doacao.splice(i, 1)
                 }
@@ -183,6 +189,7 @@ router.post("/select",
                     doacao.push(req.body.valorDigitado)
                     console.log('Valor doado:', doacao)
                 }
+                res.render('pages/enviodoa')
 
         } else {
             res.render("pages/doacao", {
@@ -217,10 +224,6 @@ router.post('/msg',
         const listaErros = validationResult(req)
 
         if (listaErros.isEmpty()) {
-            res.render("pages/contato", {
-                listaErros: null,
-                valores: req.body
-            })
             for(let i = contato.length - 1; i >= 0 ; i--){
                 contato.splice(i, 4)
             }
@@ -232,6 +235,8 @@ router.post('/msg',
                 console.log('Nova Mensagem:', contato)
             }
 
+            res.render('pages/enviocont')
+            
         } else {
             res.render("pages/contato", {
                 listaErros: listaErros,

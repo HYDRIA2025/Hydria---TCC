@@ -23,93 +23,14 @@ section{
     max-width: 1200px;
 }
 
-header{
-    position: fixed;
-    padding: 20px 4%;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99;
-}
-
-header section{
+main{
     display: flex;
+    justify-content: center;
     align-items: center;
-    justify-content: space-between;
-    padding-top: 5px;
-    padding-bottom: 5px;
-}
-
-header.rolagem{
-    background-color: var(--bg);
-    padding: 5px 4%;
-}
-
-header.rolagem a{
-    color: #fff;
-}
-
-header.rolagem .btn{
-    background-color: #fff;
-    color: var(--bg);
-}
-
-header img{
-    width: 120px;
-    height: 120px;
-}
-
-nav a{
-    margin: 0 1rem;
-    background-size: 5rem;
-    font-size: 1.8rem;
-    color: #fff;
-
-}
-
-nav a:hover{
-    color: var(--main-color);
-    border-bottom: 0.2rem solid var(--main-color);
-    padding: 0.1rem 0.3rem;
-    font-size: 2rem;
-}
-
-.home-container{
-    background-image: url(../images/img-sobre.jpg);
-    height: 100vh;
+    min-height: 100vh;
+    background: linear-gradient(to bottom, var(--gradient-color), #fff);
     background-size: cover;
     background-position: center;
-}
-
-.home-container{
-    display: flex;
-    align-items: center;
-    padding-right: 700px;
-    height: 100vh;
-}
-
-.content{
-    padding-left: 4rem;
-}
-
-.content h2{
-    font-size: 6rem;
-    color: #fff;
-
-}
-
-.box-text{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 5rem;
-}
-
-.box-provides{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 5rem;
 }
 
 .btn{
@@ -133,11 +54,10 @@ nav a:hover{
 .btn-01{
     background-color: var(--bg);
     color: #fff;
-    font-size: 20px;
-    padding: 2rem 20rem;
-    font-family: 2.7rem;
+    font-size: 1.6rem;
+    margin-top: 10rem;
+    padding: 1.5rem 15rem;
     cursor: pointer;
-    margin-top: 3rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
     border-radius: 5px;
@@ -150,8 +70,8 @@ nav a:hover{
 
 .tittle{
     text-align: center;
-    margin: 4rem 0;
-    font-size: 4rem;
+    margin-bottom: 5rem;
+    font-size: 6rem;
     color: var(--bg);
 }
 
@@ -164,25 +84,22 @@ nav a:hover{
 }
 
 .content{
+    text-align: center;
     font-size: 3rem;
-    color: #0B5A8C;
+    color: #fff;
     padding-right: 2rem;
 }
 
 .content-not{
     font-size: 2.5rem;
     color: var(--bg);
+    text-align: left;
     padding-bottom: 4rem;
 }
 
 span{
     color: var(--bg);
 
-}
-
-.logo{
-    width: 95px;
-    height: 102px;
 }
 
 footer{

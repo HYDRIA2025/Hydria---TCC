@@ -54,6 +54,11 @@ header.rolagem .btn{
     color: var(--bg);
 }
 
+header img{
+    width: 120px;
+    height: 120px;
+}
+
 nav a{
     margin: 0 1rem;
     background-size: 5rem;
