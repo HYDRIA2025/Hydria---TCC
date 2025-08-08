@@ -33,30 +33,14 @@ main{
     background-position: center;
 }
 
-.btn{
-    background-color: var(--bg);
-    color: #fff;
-    font-size: 15px;
-    padding: 1rem 3rem;
-    font-family: 1.7rem;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    border-radius: 5px;
-}
 
-.btn:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
 
 .btn-01{
     background-color: var(--bg);
     color: #fff;
-    font-size: 1.6rem;
-    margin-top: 10rem;
-    padding: 1.5rem 15rem;
+    font-size: 1.7rem;
+    margin-top: 5rem;
+    padding: 1.5rem 7rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
@@ -125,4 +109,23 @@ footer .share img{
 
 footer .share img:hover{
     background-color:  #0056b3;
+}
+
+/* MEDIA QUERY TABLET */
+@media(min-width: 768px) and (max-width: 1023px){
+
+    btn-01{
+        margin-top: 10rem;
+        padding: 1.5rem 15rem;
+    }
+}
+
+/* MEDIA QUERY DESKTOP */
+@media(min-width: 1024px){
+    
+    btn-01{
+        margin-top: 10rem;
+        font-size: 1.6rem;
+        padding: 1.5rem 15rem;
+    }
 }

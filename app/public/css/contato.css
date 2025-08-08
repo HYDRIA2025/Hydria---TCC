@@ -45,7 +45,7 @@ main .button-home {
 
 .form-container{
     background-color: #fff;
-    width: 45rem;
+    max-width: 30rem;
     border-radius: 10px;
 }
 
@@ -58,28 +58,27 @@ main .button-home {
 
 .form-container label{
     align-self: flex-start;
-    padding-left: 1.4rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     font-size: 1.6rem;
     color: var(--bg);
 }
 
 
 form input{
-    width: 400px;
-    padding: 1.3rem;
+    width: 250px;
+    padding: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 form textarea{
-    width: 400px;
+    width: 250px;
     height: 100px;
-    padding: 1.3rem;
+    padding: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
-    font-size: 1.6rem;
+    font-size: 1.3rem;
 }
 
 .btn{
@@ -103,9 +102,9 @@ form textarea{
 .btn-01{
     background-color: var(--bg);
     color: #fff;
-    font-size: 1.6rem;
-    margin-top: 2rem;
-    padding: 1.5rem 19.2rem;
+    font-size: 1.3rem;
+    margin-top: 1rem;
+    padding: 1rem 11.8rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
@@ -139,10 +138,9 @@ form textarea{
 }
 
 .content-not{
-    font-size: 2.5rem;
+    font-size: 2rem;
     color: var(--bg);
     text-align: left;
-    padding-bottom: 4rem;
 }
 
 span{
@@ -180,4 +178,77 @@ span{
     align-self: flex-start;
     padding-left: 1.5rem;
     color: red;
+}
+
+/*MEDIA QUERY TABLET */
+@media(min-width: 768px) and (max-width: 1023px){
+
+    .form-container{
+        max-width: none;
+        padding: 5rem 5rem;
+    }
+
+    .form-container label{
+        margin-top: 2rem;
+        padding-left: 1.4rem;
+        font-size: 2rem;
+    }
+
+    form input{
+        width: 450px;
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
+
+    form textarea{
+        width: 450px;
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .btn-01{
+        font-size: 1.6rem;
+        margin-top: 2rem;
+        padding: 1.8rem 22rem;
+    }
+
+    .content-not{
+        font-size: 2.5rem;
+    }
+}
+
+/* MEDIA QUERY Desktop */
+@media(min-width: 1025px){
+
+    .form-container{
+        max-width: none;
+        width: 45rem;
+    }
+
+    .form-container label{
+        margin-top: 2rem;
+        padding-left: 1.4rem;
+    }
+
+    form input{
+        width: 400px;
+        padding: 1.3rem;
+        font-size: 1.6rem;
+    }
+
+    form textarea{
+        width: 400px;
+        padding: 1.3rem;
+        font-size: 1.6rem;
+    }
+
+    .btn-01{
+        font-size: 1.6rem;
+        margin-top: 2rem;
+        padding: 1.5rem 19.2rem;
+    }
+
+    .content-not{
+        font-size: 2.5rem;
+    }
 }

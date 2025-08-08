@@ -30,32 +30,31 @@
             </section>
             
             <%
-                const msgErro = { login_email: "", login_password: "" };
-                const cssErro = { login_email: "", login_password: "" };
+                const msgErro = { loginEmail: "", loginPassword: "" };
+                const cssErro = { loginEmail: "", loginPassword: "" };
 
-
-              if (typeof listaErros !== 'undefined' && listaErros && listaErros.errors) {
-                
-                  listaErros.errors.forEach((erro) => {
-                    if (erro.path === "login_email") {
-                      msgErro.login_email = erro.msg;
-                      cssErro.login_email = "erro-form";
-                    } else if (erro.path === "login_password") {
-                      msgErro.login_password = erro.msg;
-                      cssErro.login_password = "erro-form";
-                    }else if (erro.path ==="signup_name") {
-                      msgErro.signup_name = erro.msg;
-                      cssErro.signup_name = "erro-form";
-                    }else if (erro.path ==="signup_email") {
-                      msgErro.signup_email = erro.msg;
-                      cssErro.signup_email = "erro-form";
-                    }else if (erro.path ==="signup_password") {
-                      msgErro.signup_password = erro.msg;
-                      cssErro.signup_password = "erro-form";
-                    }
-                  });
-              }
-              
+              if (typeof valores === 'undefined') { valores = { loginEmail:'', loginPassword:''} } {
+                if (typeof listaErros !== 'undefined' && listaErros && listaErros.errors) { 
+                    listaErros.errors.forEach((erro) => {
+                      if (erro.path === "loginEmail") {
+                        msgErro.loginEmail = erro.msg;
+                        cssErro.loginEmail = "erro-form";
+                      } else if (erro.path === "loginPassword") {
+                        msgErro.loginPassword = erro.msg;
+                        cssErro.loginPassword = "erro-form";
+                      }else if (erro.path ==="signup_name") {
+                        msgErro.signup_name = erro.msg;
+                        cssErro.signup_name = "erro-form";
+                      }else if (erro.path ==="signup_email") {
+                        msgErro.signup_email = erro.msg;
+                        cssErro.signup_email = "erro-form";
+                      }else if (erro.path ==="signup_password") {
+                        msgErro.signup_password = erro.msg;
+                        cssErro.signup_password = "erro-form";
+                      }
+                    });
+                }
+              } 
             %>
 
           <form
@@ -65,26 +64,28 @@
             class="form-section active"
           >
             <section class="input-group">
-              <label for="login_email">Email</label>
+              <label for="loginEmail">Email</label>
               <input
                 type="text"
-                name="login_email"
+                name="loginEmail"
                 id="loginEmail"
                 placeholder="Seu email"
-                class="<%= cssErro.login_email %>"
+                class="<%= cssErro.loginEmail %>"
+                value="<%= valores.loginEmail %>"
               />
-              <span><%= msgErro.login_email %></span>
+              <span><%= msgErro.loginEmail %></span>
             </section>
             <section class="input-group">
-              <label for="login_password">Senha</label>
+              <label for="loginPassword">Senha</label>
               <input
                 type="password"
-                name="login_password"
+                name="loginPassword"
                 id="loginPassword"
                 placeholder="Sua senha"
-                class="<%= cssErro.login_password %>"
+                class="<%= cssErro.loginPassword %>"
+                value="<%= valores.loginPassword %>"
               />
-              <span><%= msgErro.login_password %></span>
+              <span><%= msgErro.loginPassword %></span>
               <input type="hidden" name="formLogin" id="formLogin" >
               <br>
               <br>
@@ -100,6 +101,7 @@
               <input
                 type="text"
                 name="signup_name"
+                value="<%= valores.signup_name %>"
                 id="signup-name"
                 placeholder="Seu nome completo"
                 class="<%= cssErro.signup_name %>"
@@ -109,8 +111,9 @@
             <section class="input-group">
               <label for="signup_email">Email</label>
               <input
-                type="email"
+                type="text"
                 name="signup_email"
+                value="<%= valores.signup_email %>"
                 id="signup-email"
                 placeholder="Seu melhor email"
                 class="<%= cssErro.signup_email %>"
@@ -122,6 +125,7 @@
               <input
                 type="password"
                 name="signup_password"
+                value="<%= valores.signup_password %>"
                 id="signup-password"
                 placeholder="Crie sua senha"
                 class="<%= cssErro.signup_password %>"
@@ -133,15 +137,6 @@
               <button type="submit" class="btn-02">CADASTRAR</button>
             </section>
           </form>
-
-          <!-- <section class="social-login">
-            <button class="social-btn google">
-              <i class="fab fa-google"></i> Google
-            </button>
-            <button class="social-btn facebook">
-              <i class="fab fa-facebook-f"></i> Facebook
-            </button>
-          </section> -->
         </section>
       </section>
     </main>

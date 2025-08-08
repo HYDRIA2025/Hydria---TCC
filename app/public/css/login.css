@@ -50,7 +50,7 @@ main a {
 
 .form-card {
     background-color: #fff;
-    width: 45rem;
+    max-width: 30rem;
     border-radius: 10px;
     
 }
@@ -113,8 +113,8 @@ main a {
 }
 
 .input-group input {
-    width: 400px;
-    padding: 1.3rem;
+    width: 250px;
+    padding: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
     font-size: 1.6rem;
@@ -125,7 +125,7 @@ main a {
     background-color: var(--bg);
     color: #fff;
     font-size: 1.6rem;
-    padding: 1.5rem 18.4rem;
+    padding: 1.5rem 10.6rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
@@ -157,7 +157,7 @@ main a {
     background-color: var(--bg);
     color: #fff;
     font-size: 1.6rem;
-    padding: 1.5rem 16.9rem;
+    padding: 1.5rem 9.2rem;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
     display: inline-block;
@@ -187,39 +187,6 @@ main a {
     color: #555;
 }
 
-/* .social-btn i {
-    margin-right: 10px;
-    font-size: 1.5rem;
-}
-
-.social-btn.google {
-    background-color: var(--bg); 
-    color: #fff;
-    border-color: var(--bg);
-}
-
-.social-btn.google:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.social-btn.facebook {
-    background-color: var(--bg);
-    color: #fff;
-    border-color: var(--bg);
-}
-
-.social-btn.facebook:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-@media (max-width: 768px) {
-    .form-card {
-        padding: 30px;
-    }
-} */
-
 span{
     font-size: 1.3rem;
     align-self: flex-start;
@@ -227,3 +194,63 @@ span{
     color: red;
 }
 
+/*MEDIA QUERY TABLET */
+@media(min-width: 768px) and (max-width: 1023px){
+
+    .form-card{
+        padding: 3rem 3rem;
+        max-width: none;
+    }
+
+    .input-group input{
+        width: 500px;
+        padding: 1.5rem;
+        font-size: 2rem;
+    }
+
+    .input-group label{
+        font-size: 2rem;
+    }
+
+    
+    .btn{
+        padding: 2.2rem 23.2rem;
+        font-size: 1.8rem;
+    }
+
+    .btn-01{
+        font-size: 2rem;
+    }
+    
+    .btn-02{
+        padding: 2.2rem 21.3rem;
+        font-size: 1.8rem;
+    }
+
+    .tab-button{
+        font-size: 1.8rem;
+        padding: 2rem 3rem;
+    }
+}
+
+/* MEDIA QUERY Desktop */
+@media(min-width: 1025px){
+
+    .form-card{
+        width: 45rem;
+        max-width: none;
+    }
+
+    .input-group input{
+        width: 400px;
+        padding: 1.3rem;
+    }
+
+    .btn-02{
+        padding: 1.5rem 17rem;
+    }
+
+    .btn{
+        padding: 1.5rem 18.2rem;
+    }
+}

@@ -3,7 +3,7 @@
     --gradient-color: #3772EF;
     --black: #13131a;
     --bg: #0A2459;
-    --border: 0.2rem solid #A9A9A9;
+    --border: 0.2rem solid #0056b3;
     font-size: 10px;
 }
 
@@ -12,6 +12,7 @@
     padding: 0;
     outline: none;
     border: none;
+    box-sizing: border-box;
     text-decoration: none;
     transition: 0.2s linear;
     font-family: "Roboto", sans-serif;
@@ -25,14 +26,14 @@ section{
 
 header{
     position: fixed;
-    padding: 20px 4%;
+    margin: 0 auto;
     top: 0;
     left: 0;
     right: 0;
     z-index: 99;
 }
 
-header section{
+ header section{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -40,26 +41,12 @@ header section{
     padding-bottom: 5px;
 }
 
-header.rolagem{
-    background-color: var(--bg);
-    padding: 5px 4%;
-}
-
-header.rolagem a{
-    color: #fff;
-}
-
-header.rolagem .btn{
-    background-color: #fff;
-    color: var(--bg);
-}
-
-.img-logo{
+.logo img{
     width: 110px;
     height: 120px;
 }
 
-nav a{
+.menu-desktop nav a{
     margin: 0 1rem;
     background-size: 5rem;
     font-size: 1.8rem;
@@ -67,34 +54,92 @@ nav a{
 
 }
 
-nav a:hover{
+.menu-desktop nav a:hover{
     color: var(--main-color);
-    border-bottom: 0.2rem solid var(--main-color);
-    padding: 0.1rem 0.3rem;
+    border-bottom: var(--border);
     font-size: 2rem;
 }
 
-.home-container{
-    background-image: url(../images/home-image.jpg);
-    height: 100vh;
-    background-size: cover;
-    background-position: center;
+.menu-desktop{
+    display: none;
 }
+
+.menu-icon {
+    font-size: 4rem;
+    cursor: pointer;
+    display: block;
+    color: white;
+    padding-bottom: 2rem;
+    padding-right: 2rem;
+}
+
+#menu-toggle {
+  display: none;
+}
+
+.menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 70%;
+  height: 100vh;
+  background: var(--bg);
+  display: flex;
+  flex-direction: column;
+  text-align: end;
+  transition: right 0.3s ease;
+  z-index: 1000;
+}
+
+.menu a {
+  display: block;
+  font-size: 1.8rem;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  color: white;
+  width: 100%;
+  transition: background-color 0.2s ease;
+}
+
+.menu a:hover {
+  background-color: var(--gradient-color);
+}
+
+.menu .close-btn {
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 3rem;
+  color: white;
+  cursor: pointer;
+  padding-left: 2rem;
+  margin-bottom: 2rem;
+}
+
+#menu-toggle:checked ~ .menu {
+  right: 0;
+}
+
 
 .home-container{
     display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-right: 700px;
+    justify-content: center;
+    padding: 2rem;
     height: 100vh;
-    margin-bottom: 50px;
+    background-image: url(../images/home-image.jpg);
+    background-size: cover;
+    background-position: center;
+    margin-bottom: 2rem;
 }
 
-.content{
-    padding-left: 4rem;
+.content-home{
+    text-align: center;
 }
 
-.content h2{
-    font-size: 6rem;
+.content-home h2{
+    font-size: 2.3rem;
     color: #fff;
 
 }
@@ -128,8 +173,8 @@ nav a:hover{
 
 .box a{
     position: relative;
-    height: 23rem;
-    width: 120rem;
+    height: 13rem;
+    width: 38rem;
     margin: 1rem;
     border-radius: 20px;
     margin-bottom: 30px;
@@ -138,6 +183,7 @@ nav a:hover{
     align-items: center;
     cursor: pointer;
     overflow: hidden;
+    border: var(--border);
 }
 
 .box:hover {
@@ -174,13 +220,14 @@ nav a:hover{
     
 }
 
-.ranking-container  img{
-    width: 130rem;
-    height: 50rem;
+.ranking-container{
+    display: flex;
+    flex-direction: column;
 }
 
-.ranking-container img:hover {
-    transform: translateY(-4px);
+.ranking-container  img{
+    width: 39rem;
+    height: 21rem;
 }
 
 .ranking-container section{
@@ -193,7 +240,7 @@ nav a:hover{
     background-color: var(--bg);
     color: #fff;
     font-size: 15px;
-    padding: 1rem 3rem;
+    padding: 1.3rem 6rem;
     font-family: 1.7rem;
     cursor: pointer;
     margin-top: 1rem;
@@ -210,8 +257,8 @@ nav a:hover{
 .btn-01{
     background-color: var(--bg);
     color: #fff;
-    font-size: 20px;
-    padding: 2rem 20rem;
+    font-size: 18px;
+    padding: 2rem 12rem;
     font-family: 2.7rem;
     cursor: pointer;
     margin-top: 3rem;
@@ -225,10 +272,28 @@ nav a:hover{
     transform: translateY(-2px);
 }
 
+.btn-02{
+    background-color: var(--bg);
+    color: #fff;
+    font-size: 15px;
+    padding: 1rem 3rem;
+    font-family: 1.7rem;
+    cursor: pointer;
+    margin-top: 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: inline-block;
+    border-radius: 5px;
+}
+
+.btn-02:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
 .tittle{
     text-align: center;
     margin: 4rem 0;
-    font-size: 4rem;
+    font-size: 3rem;
     color: var(--bg);
 }
 
@@ -240,16 +305,16 @@ nav a:hover{
     align-items: center;
 }
 
-.content{
-    font-size: 3rem;
+.content-ranking{
+    font-size: 2.3rem;
     color: #0B5A8C;
-    padding-right: 2rem;
+    margin: 0 1rem;
 }
 
 .content-not{
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     color: #fff;
-    padding-right: 2rem;
+    text-align: end;
 }
 
 span{
@@ -281,3 +346,220 @@ footer .share img{
 footer .share img:hover{
     background-color:  #0056b3;
 }
+
+
+/*MEDIA QUERY TABLET */
+@media(min-width: 768px) and (max-width: 1023px){
+    
+    .menu-icon{
+        font-size: 5rem;
+    }
+
+    .menu a{
+        font-size: 2.7rem;
+    }
+    
+    .content-home h2{
+        font-size: 4rem;
+    }
+
+    .logo img{
+        height: 140px;
+        width: 130px;
+    }
+
+    .btn{
+        padding: 2rem 13rem;
+        font-size: 2rem;
+    }
+
+    .tittle{
+        font-size: 4.5rem;
+    }
+
+    .box a{
+        margin: 1;
+        height: 25rem;
+        width: 80rem;
+    }
+
+    .content-not{
+        font-size: 2.5rem;
+    }
+
+    .ranking-container img{
+        width: 80rem;
+        height: 50rem;
+    }
+
+    .content-ranking{
+        font-size: 3.2rem;
+        margin: 2rem;
+    }
+
+    .btn-01{
+        padding: 2rem 16rem;
+        font-size: 2.5rem;
+    }
+
+    footer .share img{
+        width: 70px;
+        height: 70px;
+    }
+
+    footer p{
+        font-size: 1.5rem;
+    }
+}
+
+/* MIDIA QUERY DESKTOP*/
+@media(min-width: 1024px) {
+    
+    .menu-mobile{
+        display: none;
+    }
+
+    .menu-desktop{
+        display: flex;
+    }
+    
+    header.rolagem{
+        background-color: var(--bg);
+        padding: 5px 4%;
+    }
+    
+    header.rolagem a{
+        color: #fff;
+    }
+
+    header.rolagem a:hover{
+        color: var(--main-color);
+        font-size: 2rem;
+    }
+    
+    header.rolagem .btn-02{
+        background-color: #fff;
+        color: var(--bg);
+    }
+    nav a:hover{
+        border-bottom: 0.2rem solid var(--main-color);
+    }
+    
+    .home-container {
+        flex-direction: row;
+        justify-content: flex-start;
+        padding-right: 700px;
+    }
+
+    .box a {
+        height: 23rem;
+        width: 120rem;
+    }
+    
+    .tittle{
+        font-size: 4rem;
+    }
+
+    .content-home{
+        text-align: left;
+        padding-left: 4rem;
+
+    }
+
+    .content-home h2{
+        font-size: 4rem;
+        color: #fff;
+    }
+    
+    .content-ranking {
+        margin-right: 4rem;
+        font-size: 3rem;
+    }
+    
+    .content-not{
+        font-size: 2.5rem;
+    }
+    
+    .img-logo {
+        width: 110px;
+        height: 120px;
+    }
+
+    .btn-01{
+        font-size: 20px;
+        padding: 2rem 15rem;
+        margin-left: 1rem;
+    }
+    
+    .ranking-container {
+        flex-direction: row;
+    }
+
+    .ranking-container section {
+        justify-content: flex-start;
+    }
+
+    .ranking-container img {
+        width: 127rem;
+        height: 40rem;
+    }
+
+    .ranking-container img:hover {
+        transform: translateY(-4px);
+    }
+
+    footer .share img{
+        width: 60px;
+        height: 60px;
+    }
+
+    footer p{
+        font-size: 1.2rem;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
