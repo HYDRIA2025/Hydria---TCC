@@ -1,8 +1,8 @@
 var express = require('express');
 var router = express.Router(); 
 const {body, validationResult} = require("express-validator")
-var {validarTelefone} = require("../helpers/validacoes");
-const { render } = require('ejs');
+var {validarTelefone, validarDoacao} = require("../helpers/validacoes");
+const { render, name } = require('ejs');
 
 router.get('/', function(req, res) {
     res.render('pages/index')
@@ -89,12 +89,12 @@ router.get('/enviocad', function(req, res) {
 //login
 let login = []
 router.get("/", (req, res) => {
-    res.render("pages/login", {listaErros: null, valores:{login_email:"", login_password:""}})
+    res.render("pages/login", {listaErros: null, valores:{loginEmail:"", loginPassword:""}})
 })
 
 router.post("/login",
-    body("login_email").isEmail().withMessage("Email inválido"),
-    body("login_password").isLength({min:6}).withMessage("Senha inválida"),
+    body("loginEmail").isEmail().withMessage("Email inválido"),
+    body("loginPassword").isLength({min:6}).withMessage("Senha inválida"),
     
     (req, res) => {
         const listaErros = validationResult(req)
@@ -105,9 +105,9 @@ router.post("/login",
                 for(let i = login.length - 1; i >= 0 ; i--){
                     login.splice(i, 2)
                 }
-                if(req.body.login_email, req.body.login_password){
-                    login.push(req.body.login_email)
-                    login.push(req.body.login_password)
+                if(req.body.loginEmail, req.body.login_password){
+                    login.push(req.body.loginEmail)
+                    login.push(req.body.loginPassword)
                     console.log('Novo Login:', login)
                 }
                 res.render('pages/enviologin')
@@ -115,8 +115,11 @@ router.post("/login",
         }else{
             res.render("pages/login", {
                 listaErros: listaErros, 
-                valores:req.body
-                })
+                valores:{
+                    loginEmail: req.body.loginEmail,
+                    loginPassword: req.body.loginPassword
+                }
+            })
             console.log(listaErros)
         }
     }
@@ -155,7 +158,11 @@ router.post("/signup",
         }else{
             res.render("pages/login", {
                 listaErros: listaErros,
-                valores:req.body
+                valores: {
+                    signup_name: req.body.signup_name,
+                    signup_email: req.body.signup_email,
+                    signup_password: req.body.signup_password
+                }
             })
             console.log(listaErros)
         }
@@ -166,35 +173,43 @@ router.post("/signup",
 // donations
 const doacao = []
 
-router.get("/", (req, res) => {
-    res.render("pages/doacao", {listaErros: null, valores:{valorSelecionado:'', valorDigitado:''}})
+router.get("/select", (req, res) => {
+    res.render("pages/doacao", {listaErros: null, valores:{valorDigitado:''}})
 })
 
 router.post("/select", 
-    body("valorSelecionado").notEmpty().withMessage("Selecione ou escreva um valor!"),
+    body("valorDigitado")
+    .isFloat()
+    .withMessage("Digite valores numéricos.")
+    .custom((value)=>{
+        const resultado = validarDoacao(value)
+        if(resultado.valido){
+            throw new Error(resultado.message)
+        }
+        return true
+    }),
 
     (req, res) => {
         const listaErros = validationResult(req)
 
         if (listaErros.isEmpty()) {
 
+                let valorDigitado = req.body.valorDigitado
+
                 for(let i = doacao.length - 1; i >=0 ; i--){   
                         doacao.splice(i, 1)
                 }
 
-                if(req.body.valorSelecionado){
-                    doacao.push(req.body.valorSelecionado)
-                    console.log('Valor doado:', doacao)
-                }else{
-                    doacao.push(req.body.valorDigitado)
+                if(valorDigitado){
+                    doacao.push(valorDigitado)
                     console.log('Valor doado:', doacao)
                 }
                 res.render('pages/enviodoa')
 
-        } else {
+        }else {
             res.render("pages/doacao", {
                 listaErros: listaErros,
-                valores: req.body
+                valores: {valorDigitado: req.body.valorDigitado}
             })
             console.log(listaErros)
         }
@@ -203,47 +218,55 @@ router.post("/select",
 
 // Contato
 let contato = []
-
 router.get('/', (req, res) => {
-    res.render('pages/contato', {listaErros: null, valores:{name:"", email:"", message:"", telephone:""}})
-})
+    res.render('pages/contato', {
+        listaErros: null,
+        valores: { name: '', email: '', message: '', telephone: '' }
+    });
+});
 
-router.post('/msg', 
-    body("name").isLength({min:3}).withMessage("Nome inválido"),
-    body("email").isEmail().withMessage("Email inválido"),
-    body("message").isLength({min:3}).withMessage("Mensagem inválida"),
-    body("telephone").isLength({min:11}).withMessage("Telefone tem 11 caracteres")
+router.post('/msg', [
+    body('name').isLength({ min: 3 }).withMessage('Nome inválido'),
+    body('email').isEmail().withMessage('Email inválido'),
+    body('message').isLength({ min: 3 }).withMessage('Mensagem inválida'),
+    body('telephone')
+        .isLength({ min: 10 })
+        .withMessage('Telefone inválido')
         .custom((value) => {
-            if(validarTelefone(value)) {
-                return true
-            }
-            throw new Error("Telefone inválido")
-        }),
-
-(req, res) => {
-        const listaErros = validationResult(req)
-
-        if (listaErros.isEmpty()) {
-            for(let i = contato.length - 1; i >= 0 ; i--){
-                contato.splice(i, 4)
-            }
-            if(req.body.name, req.body.email, req.body.mensagem, req.body.telephone){
-                contato.push(req.body.name)
-                contato.push(req.body.email)
-                contato.push(req.body.telephone)
-                contato.push(req.body.message)
-                console.log('Nova Mensagem:', contato)
-            }
-
-            res.render('pages/enviocont')
-            
-        } else {
-            res.render("pages/contato", {
-                listaErros: listaErros,
-                valores: req.body
-            })
-            console.log(listaErros)
+        const resultado = validarTelefone(value);
+        if (!resultado.valido) {
+            throw new Error(resultado.mensagem);
         }
-    })
+        return true;
+        })
+    ], (req, res) => {
+    const listaErros = validationResult(req);
+
+    if (listaErros.isEmpty()) {
+        contato = []; // limpa lista
+        contato.push(req.body.name);
+        contato.push(req.body.email);
+        contato.push(req.body.telephone);
+        contato.push(req.body.message);
+
+        console.log('Nova Mensagem:', contato);
+        return res.render('pages/enviocont');
+    }else{
+        // Retorna para a página com os valores preenchidos e os erros
+        res.render('pages/contato', {
+            listaErros: listaErros,
+            valores: { 
+                name: req.body.name,
+                email: req.body.email, 
+                telephone: req.body.telephone, 
+                message: req.body.message 
+            }
+        });
+        console.log(listaErros)
+    }
+
+    
+});
+
 
 module.exports = router;

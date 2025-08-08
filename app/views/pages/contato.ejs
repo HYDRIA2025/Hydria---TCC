@@ -25,28 +25,30 @@
         <%
           const msgErro = {name:'',email:'',telephone:'',message:''}
           const cssErro = {name:'',email:'',telephone:'',message:''}
-         
-        if (typeof listaErros !== 'undefined' && listaErros && listaErros.errors) {
-          listaErros.errors.forEach(erro => {
-            if (erro.path === 'name') {
-              msgErro.name = erro.msg
-              cssErro.name = 'erro-form'
+          
+          if (typeof valores === 'undefined') { valores = { name: '', email: '', telephone: '', message: '' } } {
+            if (typeof listaErros !== 'undefined' && listaErros && listaErros.errors) {
+              listaErros.errors.forEach(erro => {
+                if (erro.path === 'name') {
+                  msgErro.name = erro.msg
+                  cssErro.name = 'erro-form'
 
-            } else if (erro.path === 'email') {
-              msgErro.email = erro.msg
-              cssErro.email = 'erro-form'
-              
-            } else if (erro.path === 'telephone') {
-              msgErro.telephone = erro.msg
-              cssErro.telephone = 'erro-form'
+                } else if (erro.path === 'email') {
+                  msgErro.email = erro.msg
+                  cssErro.email = 'erro-form'
+                  
+                } else if (erro.path === 'telephone') {
+                  msgErro.telephone = erro.msg
+                  cssErro.telephone = 'erro-form'
 
-            } else if (erro.path === 'message') {
-              msgErro.message = erro.msg
-              cssErro.message = 'erro-form'
+                } else if (erro.path === 'message') {
+                  msgErro.message = erro.msg
+                  cssErro.message = 'erro-form'
+                }
+              })
             }
-          })
-        }
-
+          }
+        
         %>
 
       <section class="form-container">
@@ -58,6 +60,7 @@
             type="text"
             id="name"
             name="name"
+            value="<%= valores.name %>"
             class="<%= cssErro.name %>"
           />
           <span><%= msgErro.name %></span>
@@ -67,15 +70,17 @@
             type="text"
             id="email"
             name="email"
+            value="<%= valores.email %>"
             class="<%= cssErro.email %>"
           />
           <span><%= msgErro.email %></span>
           <label for="telephone">Telefone:</label>
           <input
             placeholder="Digite seu telefone"
-            type="number"
+            type="text"
             id="telefone"
             name="telephone"
+            value="<%= valores.telephone %>"
             class="<%= cssErro.telephone %>"
           />
           <span><%= msgErro.telephone %></span>
@@ -84,6 +89,7 @@
             placeholder="Digite sua Mensagem"
             id="message"
             name="message"
+            value="<%= valores.message %>"
             class="<%= cssErro.message %>"
           ></textarea>
           <span><%= msgErro.message %></span>
