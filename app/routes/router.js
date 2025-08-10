@@ -171,50 +171,79 @@ router.post("/signup",
 
 
 // donations
-const doacao = []
+const doacao = [];
 
 router.get("/select", (req, res) => {
-    res.render("pages/doacao", {listaErros: null, valores:{valorDigitado:''}})
-})
+  res.render("pages/doacao", {
+    listaErros: null,
+    valores: { valorSelecionado: "", valorDigitado: "" },
+  });
+});
 
-router.post("/select", 
-    body("valorDigitado")
-    .isFloat()
-    .withMessage("Digite valores numéricos.")
-    .custom((value)=>{
-        const resultado = validarDoacao(value)
-        if(resultado.valido){
-            throw new Error(resultado.message)
-        }
-        return true
-    }),
+router.post(
+  "/select",
 
-    (req, res) => {
-        const listaErros = validationResult(req)
+  // Regra XOR: precisa ter botão OU input (não os dois, nem nenhum)
+  body("valorSelecionado").custom((_, { req }) => {
+    const sel = (req.body.valorSelecionado ?? "").toString().trim();
+    const dig = (req.body.valorDigitado ?? "").toString().trim();
 
-        if (listaErros.isEmpty()) {
+    const temSel = sel !== "";
+    const temDig = dig !== "";
 
-                let valorDigitado = req.body.valorDigitado
-
-                for(let i = doacao.length - 1; i >=0 ; i--){   
-                        doacao.splice(i, 1)
-                }
-
-                if(valorDigitado){
-                    doacao.push(valorDigitado)
-                    console.log('Valor doado:', doacao)
-                }
-                res.render('pages/enviodoa')
-
-        }else {
-            res.render("pages/doacao", {
-                listaErros: listaErros,
-                valores: {valorDigitado: req.body.valorDigitado}
-            })
-            console.log(listaErros)
-        }
+    if (!temSel && !temDig) {
+      throw new Error("Selecione um valor ou digite um valor.");
     }
-)
+    if (temSel && temDig) {
+      throw new Error("Use apenas uma opção: botão OU campo.");
+    }
+    return true;
+  }),
+
+  // Só valida número quando NÃO há seleção de botão
+  body("valorDigitado")
+    .if((value, { req }) => {
+      const sel = (req.body.valorSelecionado ?? "").toString().trim();
+      return sel === ""; // sem botão selecionado -> validar input
+    })
+    .isFloat({ gt: 0 })
+    .withMessage("Digite um número válido maior que zero."),
+
+  async (req, res) => {
+    const listaErros = validationResult(req);
+
+    if (!listaErros.isEmpty()) {
+      return res.render("pages/doacao", {
+        listaErros,
+        valores: {
+          valorSelecionado: req.body.valorSelecionado ?? "",
+          valorDigitado: req.body.valorDigitado ?? "",
+        },
+      });
+    }
+
+    // Sucesso: pega só UM dos valores (prioriza o botão)
+    const sel = (req.body.valorSelecionado ?? "").toString().trim();
+    const dig = (req.body.valorDigitado ?? "").toString().trim();
+
+    // limpa array
+    doacao.length = 0;
+
+    let valor = null;
+    if (sel !== "") {
+      valor = parseInt(sel, 10);
+    } else if (dig !== "") {
+      valor = parseFloat(dig);
+    }
+
+    if (valor !== null && !Number.isNaN(valor)) {
+      doacao.push(valor);
+      console.log("Valor doado:", doacao);
+    }
+
+    return res.render("pages/enviodoa");
+  }
+);
 
 // Contato
 let contato = []
