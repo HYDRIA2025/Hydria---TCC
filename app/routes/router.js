@@ -89,7 +89,7 @@ router.get('/enviocad', function(req, res) {
 //login
 let login = []
 router.get("/", (req, res) => {
-    res.render("pages/login", {listaErros: null, valores:{loginEmail:"", loginPassword:""}})
+    res.render("pages/login", {listaErros: null, valores:{loginEmail: '', loginPassword: ''}})
 })
 
 router.post("/login",
@@ -101,16 +101,13 @@ router.post("/login",
 
         //receber dados do formulário
         if(listaErros.isEmpty()){
+            login = []
+            login.push(req.body.loginEmail)
+            login.push(req.body.loginPassword)
 
-                for(let i = login.length - 1; i >= 0 ; i--){
-                    login.splice(i, 2)
-                }
-                if(req.body.loginEmail, req.body.login_password){
-                    login.push(req.body.loginEmail)
-                    login.push(req.body.loginPassword)
-                    console.log('Novo Login:', login)
-                }
-                res.render('pages/enviologin')
+            
+            console.log('Novo Login:', login)
+            return res.render('pages/enviologin')
                 
         }else{
             res.render("pages/login", {
