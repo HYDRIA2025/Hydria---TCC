@@ -94,7 +94,7 @@ router.get("/", (req, res) => {
 
 router.post("/login",
     body("loginEmail").isEmail().withMessage("Email inválido"),
-    body("loginPassword").isLength({min:6}).withMessage("Senha inválida"),
+    body("loginPassword").isLength({min:6}).withMessage("Mínimo de caracteres é 6"),
     
     (req, res) => {
         const listaErros = validationResult(req)
@@ -105,7 +105,7 @@ router.post("/login",
             login.push(req.body.loginEmail)
             login.push(req.body.loginPassword)
 
-            
+
             console.log('Novo Login:', login)
             return res.render('pages/enviologin')
                 
