@@ -94,7 +94,7 @@ router.get("/", (req, res) => {
 
 router.post("/login",
     body("loginEmail").isEmail().withMessage("Email inválido"),
-    body("loginPassword").isLength({min:6}).withMessage("Mínimo de caracteres é 6"),
+    body("loginPassword").isLength({min:6}).withMessage("Mínimo 6 caracteres"),
     
     (req, res) => {
         const listaErros = validationResult(req)
@@ -133,7 +133,7 @@ router.get("/", (req, res) => {
 router.post("/signup",
     body("signup_name").isLength({min:3}).withMessage("Nome inválido"),
     body("signup_email").isEmail().withMessage("Email inválido"),
-    body("signup_password").isLength({min:6}).withMessage("Senha inválida"),
+    body("signup_password").isLength({min:6}).withMessage("Mínimo 6 caracteres"),
     
     (req, res) => {
         const listaErros = validationResult(req)
