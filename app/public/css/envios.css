@@ -77,8 +77,8 @@ main{
 .content-not{
     font-size: 2.5rem;
     color: var(--bg);
-    text-align: left;
-    padding-bottom: 4rem;
+    text-align: center;
+    padding-top: 4rem;
 }
 
 span{
