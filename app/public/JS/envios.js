@@ -1,5 +1,5 @@
 // Temporizador para redirecionamento automático
-let timeLeft = 5;
+let timeLeft = 3;
 const countdownElement = document.getElementById("countdown");
 
 const countdown = setInterval(() => {
