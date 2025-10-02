@@ -24,6 +24,10 @@ router.get('/login', function(req, res) {
     res.render('pages/login')
 })
 
+router.get('/noticias', function(req, res) {
+    res.render('pages/noticias')
+})
+
 router.get('/noticia01', function(req, res) {
     res.render('pages/noticia01')
 })

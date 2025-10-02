@@ -120,15 +120,12 @@ header{
   right: 0;
 }
 
-
 .home-container{
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
     height: 100vh;
-    background-image: url(../images/home-image.jpg);
+    background: linear-gradient(to bottom, var(--gradient-color), #fff);
     background-size: cover;
     background-position: center;
     margin-bottom: 2rem;
@@ -139,56 +136,53 @@ header{
 }
 
 .content-home h2{
-    font-size: 2.3rem;
+    font-size: 3rem;
     color: #fff;
 
 }
 
-.box-not{
-    display: flex;
-    flex-direction: row;
-    padding: 50px 0;
-    background-color: var(--black);
-    margin: 3px;
-    border-radius: 5px;
-}
-
-.text-not{
-    padding: 5px;
-
-}
-
-.img-not{
-    height: 100%;
-    width: 300px;
-    margin-right: 50px;
-}
-
-.ranking-container{
+.box-container{
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 100vh;
-    background: linear-gradient(to top, var(--gradient-color), #fff);
-    background-size: cover;
-    background-position: center;
-    
-}
-
-.ranking-container{
-    display: flex;
-    flex-direction: column;
-}
-
-.ranking-container  img{
-    width: 39rem;
-    height: 21rem;
-}
-
-.ranking-container section{
-    display: flex;
-    justify-content: center;
     flex-wrap: wrap;
+}
+
+.box a{
+    position: relative;
+    height: 13rem;
+    width: 38rem;
+    margin: 1rem;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    border: var(--border);
+}
+
+.box:hover {
+    transform: translateY(-3px);
+}
+
+.box .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.box .content-not,
+.box a {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 10px;
 }
 
 .btn{
@@ -230,9 +224,9 @@ header{
 .btn-02{
     background-color: var(--bg);
     color: #fff;
-    font-size: 13px;
+    font-size: 15px;
     padding: 1rem 3rem;
-    font-family: 1.3rem;
+    font-family: 1.7rem;
     cursor: pointer;
     margin-top: 1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -241,24 +235,6 @@ header{
 }
 
 .btn-02:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-.btn-03{
-    background-color: var(--bg);
-    color: #fff;
-    font-size: 10px;
-    padding: 1rem 5rem;
-    font-family: 1.4rem;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    border-radius: 5px;
-}
-
-.btn-03:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
@@ -285,9 +261,9 @@ header{
 }
 
 .content-not{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #fff;
-    text-align: start;
+    text-align: end;
 }
 
 span{
@@ -320,10 +296,7 @@ footer .share img:hover{
     background-color:  #0056b3;
 }
 
-
-/*MEDIA QUERY TABLET */
-@media(min-width: 768px) and (max-width: 1023px){
-    
+@media(min-width: 768px) and (max-width: 1024px){
     .menu-icon{
         font-size: 5rem;
     }
@@ -360,16 +333,6 @@ footer .share img:hover{
         font-size: 2.5rem;
     }
 
-    .ranking-container img{
-        width: 80rem;
-        height: 50rem;
-    }
-
-    .content-ranking{
-        font-size: 3.2rem;
-        margin: 2rem;
-    }
-
     .btn-01{
         padding: 2rem 16rem;
         font-size: 2.5rem;
@@ -385,17 +348,14 @@ footer .share img:hover{
     }
 }
 
-/* MIDIA QUERY DESKTOP*/
-@media(min-width: 1024px) {
-    
+@media(min-width: 1025px){
     .menu-mobile{
         display: none;
     }
-
     .menu-desktop{
         display: flex;
     }
-    
+
     header.rolagem{
         background-color: var(--bg);
         padding: 5px 4%;
@@ -417,11 +377,20 @@ footer .share img:hover{
     nav a:hover{
         border-bottom: 0.2rem solid var(--main-color);
     }
-    
-    .home-container {
+
+     .home-container {
         flex-direction: row;
-        justify-content: flex-start;
-        padding-right: 700px;
+        justify-content: center;
+    }
+
+     .content-home{
+        text-align: center;
+
+    }
+
+    .content-home h2{
+        font-size: 5rem;
+        color: #fff;
     }
 
     .box a {
@@ -432,23 +401,7 @@ footer .share img:hover{
     .tittle{
         font-size: 4rem;
     }
-
-    .content-home{
-        text-align: left;
-        padding-left: 4rem;
-
-    }
-
-    .content-home h2{
-        font-size: 4rem;
-        color: #fff;
-    }
-    
-    .content-ranking {
-        margin-right: 4rem;
-        font-size: 3rem;
-    }
-    
+  
     .content-not{
         font-size: 2.5rem;
     }
@@ -463,23 +416,6 @@ footer .share img:hover{
         padding: 2rem 15rem;
         margin-left: 1rem;
     }
-    
-    .ranking-container {
-        flex-direction: row;
-    }
-
-    .ranking-container section {
-        justify-content: flex-start;
-    }
-
-    .ranking-container img {
-        width: 127rem;
-        height: 40rem;
-    }
-
-    .ranking-container img:hover {
-        transform: translateY(-4px);
-    }
 
     footer .share img{
         width: 60px;
@@ -489,50 +425,4 @@ footer .share img:hover{
     footer p{
         font-size: 1.2rem;
     }
-    
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
