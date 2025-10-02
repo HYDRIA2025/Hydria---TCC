@@ -144,25 +144,70 @@ header{
 
 }
 
-.box-not{
+.box-topics{
     display: flex;
-    flex-direction: row;
-    padding: 50px 0;
-    background-color: var(--black);
-    margin: 3px;
-    border-radius: 5px;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 50px;
 }
 
-.text-not{
-    padding: 5px;
-
+.topics img{
+    background-color: var(--bg);
+    padding: 20px 20px;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 50px;
 }
 
-.img-not{
-    height: 100%;
-    width: 300px;
-    margin-right: 50px;
+.topics img:hover {
+    background-color: #0056b3;
+    transform: translateY(-4px);
 }
+
+.box-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.box a{
+    position: relative;
+    height: 13rem;
+    width: 38rem;
+    margin: 1rem;
+    border-radius: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    cursor: pointer;
+    overflow: hidden;
+    border: var(--border);
+}
+
+.box:hover {
+    transform: translateY(-3px);
+}
+
+.box .bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.box .content-not,
+.box a {
+  position: relative;
+  z-index: 1;
+  color: white;
+  padding: 10px;
+}
+
 
 .ranking-container{
     display: flex;
@@ -230,9 +275,9 @@ header{
 .btn-02{
     background-color: var(--bg);
     color: #fff;
-    font-size: 13px;
+    font-size: 15px;
     padding: 1rem 3rem;
-    font-family: 1.3rem;
+    font-family: 1.7rem;
     cursor: pointer;
     margin-top: 1rem;
     transition: background-color 0.3s ease, transform 0.2s ease;
@@ -241,24 +286,6 @@ header{
 }
 
 .btn-02:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
-}
-
-.btn-03{
-    background-color: var(--bg);
-    color: #fff;
-    font-size: 10px;
-    padding: 1rem 5rem;
-    font-family: 1.4rem;
-    cursor: pointer;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
-    border-radius: 5px;
-}
-
-.btn-03:hover {
     background-color: #0056b3;
     transform: translateY(-2px);
 }
@@ -285,9 +312,9 @@ header{
 }
 
 .content-not{
-    font-size: 1.3rem;
+    font-size: 1.5rem;
     color: #fff;
-    text-align: start;
+    text-align: end;
 }
 
 span{
