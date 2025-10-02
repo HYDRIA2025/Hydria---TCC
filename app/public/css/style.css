@@ -165,49 +165,53 @@ header{
 }
 
 .box-container{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    padding: 0 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
-.box a{
-    position: relative;
-    height: 13rem;
-    width: 38rem;
-    margin: 1rem;
-    border-radius: 20px;
-    margin-bottom: 30px;
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    cursor: pointer;
+.box {
+    background: #fff;
+    border-radius: 15px;
     overflow: hidden;
-    border: var(--border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
 }
 
 .box:hover {
-    transform: translateY(-3px);
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.box a {
+    display: block;
+    text-decoration: none;
+    color: inherit;
 }
 
 .box .bg-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  z-index: 0;
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
 }
 
-.box .content-not,
-.box a {
-  position: relative;
-  z-index: 1;
-  color: white;
-  padding: 10px;
+.box:hover .bg-img {
+    transform: scale(1.05);
 }
 
+.box .content-not {
+    padding: 20px;
+    color: var(--bg);
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.4;
+    text-align: left;
+    margin: 0;
+}
 
 .ranking-container{
     display: flex;
@@ -314,7 +318,6 @@ header{
 .content-not{
     font-size: 1.5rem;
     color: #fff;
-    text-align: end;
 }
 
 span{
@@ -377,14 +380,8 @@ footer .share img:hover{
         font-size: 4.5rem;
     }
 
-    .box a{
-        margin: 1;
-        height: 25rem;
-        width: 80rem;
-    }
-
-    .content-not{
-        font-size: 2.5rem;
+    .box .content-not{
+        font-size: 1.8rem;
     }
 
     .ranking-container img{
@@ -451,11 +448,6 @@ footer .share img:hover{
         padding-right: 700px;
     }
 
-    .box a {
-        height: 23rem;
-        width: 120rem;
-    }
-    
     .tittle{
         font-size: 4rem;
     }
@@ -474,10 +466,6 @@ footer .share img:hover{
     .content-ranking {
         margin-right: 4rem;
         font-size: 3rem;
-    }
-    
-    .content-not{
-        font-size: 2.5rem;
     }
     
     .img-logo {
